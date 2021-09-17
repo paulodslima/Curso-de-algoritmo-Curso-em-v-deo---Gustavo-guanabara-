@@ -6,38 +6,36 @@ algoritmo "(PASSO 06 – REPETIÇÃO COM FAÇA ENQUANTO) Exercício 63"
 // c) A média entre todos os valores
 // d) Quantos valores são pares
 // Autor : Paulo Diego
-// Data : 16/09/2021
+// Data : 17/09/2021
 // Seção de Declarações 
 var
-   quantValPar, cont:inteiro
-   somaVal, mediaVal, menorVal, valor:real
-   condicao:caractere
+valor, valPar, cont:inteiro
+flag:caractere
+somaVal, menorVal, mediaVal:real
 inicio
 // Seção de Comandos
    cont <- 1
-   enquanto (condicao<>"N") faca
-            escreva("Digite o ",cont,"º valor: ")
+   enquanto (flag<>"N") faca
+            escreva("Digite o",cont,"º valor: ")
             leia(valor)
-            somaVal <- somaVal+valor
+            somaVal <- somaVal + valor
             se (valor%2=0) entao
-               quantValPar <- quantValPar+1
+               valPar <- valPar + 1
             fimSe
             se (cont=1) entao
                menorVal <- valor
-            fimSe
-            se (menorVal>valor) entao
-               menorVal <- valor
+            senao
+                 se (menorVal>valor) entao
+                    menorVal <- valor
+                 fimSe
             fimSe
             escreva("Quer continuar? [S/N] ")
-            leia(condicao)
-            cont <- cont+1
+            leia(flag)
+            cont <- cont + 1
    fimEnquanto
    mediaVal <- somaVal/cont
-   escreval("A soma de todos os valores é de [",somaVal," ]")
-   escreval("O menor valor digitado foi [",menorVal," ]")
-   escreval("A média entre todos os valores foi de [",mediaVal," ]")
-   escreva("A quantidade de valores pares é de [",quantValPar," ]")
-
-   
-
+   escreval("A soma entre os valores é",somaVal)
+   escreval("O menor valor digitado foi",menorVal)
+   escreval("A media entre os valores foi de",mediaVal)
+   escreval("A quantidade de valores pares é de",valPar)
 fimalgoritmo
